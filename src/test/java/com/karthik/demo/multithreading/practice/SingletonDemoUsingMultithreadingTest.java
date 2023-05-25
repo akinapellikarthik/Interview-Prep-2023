@@ -12,5 +12,6 @@ class SingletonDemoUsingMultithreadingTest {
     SingletonDemoUsingMultithreading.getInstance();
     Assertions.assertEquals(1,SingletonDemoUsingMultithreading.getInstance().getCounter());
 
+    
   }
 }
