@@ -24,9 +24,14 @@ public class StringDecoding {
     for (int i = 0; i < encodedString.length(); i++) {
       var ch = encodedString.charAt(i);
       if (Character.isDigit(ch)) {
-        integerStack.push(Character.getNumericValue(ch));
-        //num = num * 10 + (ch - '0');
-      } else if (ch == ']') {
+        num = num * 10 + (ch - '0');
+      }
+      else if(ch == '['){
+        integerStack.push(num);
+        num =0;
+        characterStack.push(ch);
+      }
+      else if (ch == ']') {
         StringBuilder temp = new StringBuilder();
         int value = integerStack.pop();//repeat the string for this number of times
         //pop the integer stack and characterStack until [ brace is not found
