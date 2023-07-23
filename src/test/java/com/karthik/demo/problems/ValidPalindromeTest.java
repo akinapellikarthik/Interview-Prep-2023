@@ -11,5 +11,6 @@ class ValidPalindromeTest {
   @Test
   void isValidPalindrome() {
     assertFalse(validPalindrome.isValidPalindrome("0P"));
+
   }
 }
