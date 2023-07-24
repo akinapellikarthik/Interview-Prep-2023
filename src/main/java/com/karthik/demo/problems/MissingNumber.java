@@ -10,6 +10,7 @@ public class MissingNumber {
       calSum += i;
     }
 
+    
     return sum - calSum;
   }
 
