@@ -20,6 +20,12 @@ public class SingleLinkedListMain {
     singleLinkedList.printList();
     singleLinkedList.countNodes();
 
+    singleLinkedList.insertAtAGivenPosition(100, 3);
+    singleLinkedList.printList();
+
+    singleLinkedList.insertAfterANode(101, 100);
+    singleLinkedList.printList();
+
 
 
   }
