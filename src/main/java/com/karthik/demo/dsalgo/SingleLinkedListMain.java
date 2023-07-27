@@ -23,9 +23,12 @@ public class SingleLinkedListMain {
     singleLinkedList.insertAtAGivenPosition(100, 3);
     singleLinkedList.printList();
 
-    singleLinkedList.insertAfterANode(101, 100);
+    singleLinkedList.insertAfterANode(102, 100);
     singleLinkedList.printList();
 
+
+    singleLinkedList.insertBeforeANode(101, 102);
+    singleLinkedList.printList();
 
 
   }

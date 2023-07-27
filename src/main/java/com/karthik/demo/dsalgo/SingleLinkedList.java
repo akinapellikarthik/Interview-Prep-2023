@@ -98,5 +98,20 @@ public class SingleLinkedList {
 
   }
 
+  //TODO: Need to see and fix the code
+  public void insertBeforeANode(int value, int nodeValue){
+    Node childNode = new Node(value);
+    Node temp = start;
+    while (temp != null){
+      if(temp.next.info == nodeValue)
+        break;
+      temp = temp.next;
+    }
+
+    childNode.next = temp.next;
+    temp.next = childNode;
+
+  }
+
 
 }
