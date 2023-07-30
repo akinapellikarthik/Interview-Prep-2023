@@ -5,11 +5,18 @@ import java.util.Stack;
 public class PlusOne {
 
   public static void main(String[] args) {
-    var ints = new PlusOne().plusOne(new int[]{1,2,3});
-    for (int i: ints
-    ) {
+    //var ints = new PlusOne().plusOne(new int[]{1,2,3});
+    /*for (int i: ints) {
       System.out.print(i);
+    }*/
+    //int[] ip = new int[]{1,2,3};
+    //int[] ip = new int[]{4,3,2,1};
+    //int[] ip = new int[]{9,9};
+    int[] ip = new int[]{8,9,9,9};
+    for (int i : new PlusOne().plusOneNewImpl(ip)) {
+      System.out.print(i+":");
     }
+
   }
 
 
@@ -40,6 +47,43 @@ public class PlusOne {
     //return Integer.toString(tempSum).chars().map(c -> c-'0').toArray();
 
     //return result;
+  }
+
+  public int[] plusOneNewImpl(int[] digits){
+    int len = digits.length;
+    int start = 1;
+    int rem = 0;
+    Stack<Integer> tempStack = new Stack<>();
+    while(len != 0){
+      if(start > 0 || rem !=0){
+       int res= digits[len -1] + 1;
+       if(res > 9){
+         tempStack.push(0);
+         rem = 1;
+       }else {
+         tempStack.push(res);
+         rem = 0;
+       }
+       start--;
+      }
+      else {
+
+        tempStack.push(digits[len-1] + rem);
+      }
+      len--;
+    }
+    if(rem == 1)
+      tempStack.push(rem);
+
+    int[] result = new int[tempStack.size()];
+    int ctr = 0;
+
+    while(!tempStack.empty()){
+      result[ctr] = tempStack.pop();
+      ctr++;
+    }
+
+    return result;
   }
 
 }
