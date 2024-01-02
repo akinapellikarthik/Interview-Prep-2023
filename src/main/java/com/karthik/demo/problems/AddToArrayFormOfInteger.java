@@ -19,7 +19,7 @@ public class AddToArrayFormOfInteger {
   public List<Integer> addToArrayForm(int[] num, int k) {
     Stack<Integer> tempStack = new Stack<>();
     List<Integer> result = new ArrayList<>();
-    int[] kArray = new int[num.length];
+    int[] kArray = new int[Math.max(num.length, String.valueOf(k).length())];
     int kLen = kArray.length - 1;
     int carry = 0;
 
@@ -52,6 +52,22 @@ public class AddToArrayFormOfInteger {
     System.out.println(result);
     return result;
 
+
+  }
+
+  public List<Integer> addToArrayFormNewImpl(int[] num, int k) {
+
+    List<Integer> result = new ArrayList<>();
+    int cur = k;
+
+    for (int i = num.length - 1; i >=0 ; i--) {
+      int temp = num[i] + k;
+      result.add(temp % 10);//4
+      int carry = temp / 10;//3
+
+    }
+
+    return result;
 
   }
 
