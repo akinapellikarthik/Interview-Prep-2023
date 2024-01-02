@@ -12,6 +12,8 @@ public class FindNegativeNumbersin2DArray {
       }
     }
 
+
+
     return counter;
   }
 
