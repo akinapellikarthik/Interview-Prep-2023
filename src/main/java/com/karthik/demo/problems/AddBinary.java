@@ -23,6 +23,10 @@ public class AddBinary {
     //Queue<Integer> aQueue = new LinkedList<>();
     //Queue<Integer> bQueue = new LinkedList<>();
 
+    String s1 ="";
+    String s2="";
+    s2.contains(s1);
+
     Stack<Integer> firstStack = new Stack<>();
     Stack<Integer> secondStack = new Stack<>();
     Stack<Integer> tempStack = new Stack<>();
