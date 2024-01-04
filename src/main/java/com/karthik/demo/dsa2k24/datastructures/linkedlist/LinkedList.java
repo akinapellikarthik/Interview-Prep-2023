@@ -30,6 +30,8 @@ public class LinkedList {
     System.out.println("X");
   }
 
+
+
   public void getHead(){
     System.out.println("Head: "+head.value);
   }
