@@ -29,6 +29,13 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>4.12.0</version> <!-- Use the latest version available -->
+		</dependency>
+
+
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -39,12 +46,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
-		<dependency>
-			<groupId>com.squareup.okhttp3</groupId>
-			<artifactId>okhttp</artifactId>
-			<version>4.9.0</version>
-		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
