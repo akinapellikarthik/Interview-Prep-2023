@@ -1,4 +1,4 @@
-package com.karthik.demo.dsa2k24.datastructures.linkedlist;
+package com.karthik.demo.dsa2k24.datastructures.linkedlist.sll;
 
 public class LinkedList {
 
