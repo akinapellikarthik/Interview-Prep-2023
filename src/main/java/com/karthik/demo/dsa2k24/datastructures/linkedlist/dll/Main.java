@@ -19,5 +19,8 @@ public class Main {
     dll.prepend(100);
     dll.append(200);
     dll.printList();
+    System.out.println(dll.removeFirst().value);
+    System.out.println(dll.removeFirst().value);
+    System.out.println(dll.removeFirst());
   }
 }
