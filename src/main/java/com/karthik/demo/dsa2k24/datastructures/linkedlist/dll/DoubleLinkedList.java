@@ -123,8 +123,7 @@ public class DoubleLinkedList {
 
   public boolean set(int index, int value) {
     Node temp = get(index);
-    if(temp != null)
-    {
+    if (temp != null) {
       temp.value = value;
       return true;
     }
@@ -132,14 +131,14 @@ public class DoubleLinkedList {
   }
 
   public boolean insert(int index, int value) {
-    if(index < 0 || index >= length) {
+    if (index < 0 || index >= length) {
       return false;
     }
-    if(index == 0){
+    if (index == 0) {
       prepend(value);
       return true;
     }
-    if(index == length - 1){
+    if (index == length - 1) {
       append(value);
       return true;
     }
@@ -152,5 +151,29 @@ public class DoubleLinkedList {
     after.prev = newNode;
     length++;
     return true;
+  }
+
+  public Node remove(int index) {
+    if (index < 0 || index >= length) {
+      return null;
+    }
+    if (index == 0) {
+      return removeFirst();
+    }
+    if (index == length - 1) {
+      return removeLast();
+    }
+    Node temp = get(index);
+    /* Node before = temp.prev;
+    Node after = before.next;
+    before.next = temp.next;
+    after.prev = temp.prev;*/
+
+    temp.next.prev = temp.prev;
+    temp.prev.next = temp.next;
+    temp.prev = null;
+    temp.next = null;
+    length--;
+    return temp;
   }
 }

@@ -32,8 +32,15 @@ public class Main {
     System.out.println(dll.get(0).value);
     System.out.println(dll.get(4).value);
 
-    dll.set(0,400);
-    dll.insert(1,402);
+    dll.set(0, 400);
+    dll.insert(1, 402);
+    dll.printList();
+
+    dll.remove(1);
+    dll.printList();
+    dll.remove(1);
+    dll.printList();
+    dll.remove(2);
     dll.printList();
   }
 }
