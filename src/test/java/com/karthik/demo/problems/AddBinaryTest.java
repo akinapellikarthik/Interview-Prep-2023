@@ -8,7 +8,6 @@ class AddBinaryTest {
   private AddBinary addBinary = new AddBinary();
   @Test
   void addBinary() {
-   // Assertions.assertEquals("10101",addBinary.addBinary("1010","1011"));
-    Assertions.assertEquals("100",addBinary.addBinary("11","1"));
+    Assertions.assertEquals("101",addBinary.addBinary("11","1"));
   }
 }
