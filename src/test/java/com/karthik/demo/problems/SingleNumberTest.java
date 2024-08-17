@@ -10,7 +10,7 @@ class SingleNumberTest {
 
   @Test
   void singleNumber() {
-    int[] nums = new int[]{2,2,1};
+    int[] nums = new int[] {2, 2, 1};
     sb.singleNumber(nums);
   }
 }

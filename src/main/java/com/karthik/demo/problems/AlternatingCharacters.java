@@ -10,16 +10,12 @@ public class AlternatingCharacters {
 
     for (int i = 0; i < s.length(); i++) {
       var ch = s.charAt(i);
-      if(characterStack.isEmpty())
-        characterStack.push(ch);
+      if (characterStack.isEmpty()) characterStack.push(ch);
       else {
-        if(ch == characterStack.peek())
-          counter++;
-        else
-          characterStack.push(ch);
+        if (ch == characterStack.peek()) counter++;
+        else characterStack.push(ch);
       }
     }
     return counter;
   }
-
 }

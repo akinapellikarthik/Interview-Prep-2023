@@ -12,7 +12,7 @@ public class MultiThreadedStackOpUsingSyncMethod {
     lock = new Object();
   }
 
-  public boolean isFull(){
+  public boolean isFull() {
     return stackTop >= stackArray.length - 1;
   }
 
@@ -20,36 +20,32 @@ public class MultiThreadedStackOpUsingSyncMethod {
     return stackTop < 0;
   }
 
-  public synchronized boolean push(int element){
+  public synchronized boolean push(int element) {
 
-      if(isFull())
-        return false;
-      stackTop++;
-      try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        throw new RuntimeException(e);
-      }
-      stackArray[stackTop] = element;
-      return true;
-
+    if (isFull()) return false;
+    stackTop++;
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
+    }
+    stackArray[stackTop] = element;
+    return true;
   }
 
-  public synchronized int pop(){
+  public synchronized int pop() {
 
-     if(isEmpty())
-        return Integer.MIN_VALUE;
+    if (isEmpty()) return Integer.MIN_VALUE;
 
-      int obj = stackArray[stackTop];
-      stackArray[stackTop] = Integer.MIN_VALUE;
+    int obj = stackArray[stackTop];
+    stackArray[stackTop] = Integer.MIN_VALUE;
 
-      try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        throw new RuntimeException(e);
-      }
-      stackTop--;
-      return obj;
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
     }
-
+    stackTop--;
+    return obj;
+  }
 }

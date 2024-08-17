@@ -25,16 +25,14 @@ public class StringDecoding {
       var ch = encodedString.charAt(i);
       if (Character.isDigit(ch)) {
         num = num * 10 + (ch - '0');
-      }
-      else if(ch == '['){
+      } else if (ch == '[') {
         integerStack.push(num);
-        num =0;
+        num = 0;
         characterStack.push(ch);
-      }
-      else if (ch == ']') {
+      } else if (ch == ']') {
         StringBuilder temp = new StringBuilder();
-        int value = integerStack.pop();//repeat the string for this number of times
-        //pop the integer stack and characterStack until [ brace is not found
+        int value = integerStack.pop(); // repeat the string for this number of times
+        // pop the integer stack and characterStack until [ brace is not found
         Character ch1;
         while (characterStack.peek() != '[') {
           ch1 = characterStack.pop();
@@ -53,7 +51,6 @@ public class StringDecoding {
       } else {
         characterStack.push(ch);
       }
-
     }
 
     while (!characterStack.isEmpty()) {
@@ -62,5 +59,4 @@ public class StringDecoding {
 
     return decodedStr.reverse().toString();
   }
-
 }

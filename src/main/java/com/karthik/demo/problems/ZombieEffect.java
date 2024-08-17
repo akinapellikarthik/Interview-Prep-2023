@@ -15,16 +15,16 @@ class Location {
 public class ZombieEffect {
 
   public static void main(String[] args) {
-    //int[][] zombieCells = {{2, 1, 1}, {1, 1, 0}, {0, 1, 1}};
+    // int[][] zombieCells = {{2, 1, 1}, {1, 1, 0}, {0, 1, 1}};
     /*int[][] zombieCells = {  {1, 2, 2, 1, 2},
-        {1, 2, 1, 2, 1},
-        {1, 1, 1, 1, 2},
-        {1, 2, 1, 1, 1} };*/
+    {1, 2, 1, 2, 1},
+    {1, 1, 1, 1, 2},
+    {1, 2, 1, 1, 1} };*/
 
-    int[] [] zombieCells = {
-        {2,1,1},
-        {1,1,0},
-        {0,1,1}
+    int[][] zombieCells = {
+      {2, 1, 1},
+      {1, 1, 0},
+      {0, 1, 1}
     };
 
     var i = zombieRotationCount(zombieCells);
@@ -47,10 +47,10 @@ public class ZombieEffect {
 
   public static int zombieRotationCount(int[][] cells) {
     int count = 0;
-    //int[][] zombieCells = {{2  ,1   ,1},{1  ,1   ,0},{0,   1,  2}};
-    //0 - empty cell
-    //1- human
-    //2 - zombie
+    // int[][] zombieCells = {{2  ,1   ,1},{1  ,1   ,0},{0,   1,  2}};
+    // 0 - empty cell
+    // 1- human
+    // 2 - zombie
     int rowLen = cells.length;
     int colLen = cells[0].length;
     int nextZombieCount = 0;
@@ -59,62 +59,59 @@ public class ZombieEffect {
     Queue<Location> locationQueue = new LinkedList<>();
     System.out.println("First Print");
     printZombieMatrix(cells);
-    //count and find the zombies
+    // count and find the zombies
     for (int i = 0; i < cells.length; i++) {
       for (int j = 0; j < cells[i].length; j++) {
-        //hey I have found zombie
+        // hey I have found zombie
         if (cells[i][j] == 2) {
           locationQueue.add(new Location(i, j));
           currentZombieCount++;
-        }
-        else if(cells[i][j] == 1){
+        } else if (cells[i][j] == 1) {
           humanCount++;
         }
       }
     }
 
-
     while (!locationQueue.isEmpty()) {
 
       for (int i = 0; i < currentZombieCount; i++) {
         Location zombieLocation = locationQueue.poll();
-        //once we find zombieLocation, traverse left, right, top and down
-        //during traverse, check if human only act and also if co-ordinates are correct
+        // once we find zombieLocation, traverse left, right, top and down
+        // during traverse, check if human only act and also if co-ordinates are correct
         int x = zombieLocation.getX();
         int y = zombieLocation.getY();
 
-        //bottom
+        // bottom
         if (isValidLocation(x + 1, y, rowLen, colLen) && cells[x + 1][y] == 1) {
           cells[x + 1][y] = 2;
           locationQueue.add(new Location(x + 1, y));
           nextZombieCount++;
           humanCount--;
         }
-        //up
+        // up
         if (isValidLocation(x - 1, y, rowLen, colLen) && cells[x - 1][y] == 1) {
           cells[x - 1][y] = 2;
           locationQueue.add(new Location(x - 1, y));
           nextZombieCount++;
           humanCount--;
         }
-        //right
+        // right
         if (isValidLocation(x, y + 1, rowLen, colLen) && cells[x][y + 1] == 1) {
           cells[x][y + 1] = 2;
-          locationQueue.add(new Location(x, y+1));
+          locationQueue.add(new Location(x, y + 1));
           nextZombieCount++;
           humanCount--;
         }
-        //left
+        // left
         if (isValidLocation(x, y - 1, rowLen, colLen) && cells[x][y - 1] == 1) {
           cells[x][y - 1] = 2;
-          locationQueue.add(new Location(x , y-1));
+          locationQueue.add(new Location(x, y - 1));
           nextZombieCount++;
           humanCount--;
         }
       }
 
-      if(nextZombieCount == 0)
-        break;
+      if (nextZombieCount == 0) break;
       currentZombieCount = nextZombieCount;
       nextZombieCount = 0;
 

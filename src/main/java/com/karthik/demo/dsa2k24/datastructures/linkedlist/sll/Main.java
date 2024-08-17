@@ -12,5 +12,4 @@ public class Main {
     myLinkedList.append(5);
     myLinkedList.printList();
   }
-
 }

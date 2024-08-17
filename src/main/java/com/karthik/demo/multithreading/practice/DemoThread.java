@@ -6,5 +6,4 @@ public class DemoThread {
     Thread t = new Thread(() -> System.out.println("Helloo Thread"));
     t.start();
   }
-
 }

@@ -8,6 +8,5 @@ import lombok.Data;
 public class SingleLinkedListNode {
 
   private Integer data;
-  private  SingleLinkedListNode nextNode;
-
+  private SingleLinkedListNode nextNode;
 }

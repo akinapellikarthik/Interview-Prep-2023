@@ -11,46 +11,37 @@ public class AddTwoNumbers {
     Stack<Integer> tempStack2 = new Stack<>();
     ListNode result = null;
 
-    //fill the stack
-    while (l1 != null){
+    // fill the stack
+    while (l1 != null) {
       tempStack1.push(l1.val);
       l1 = l1.next;
     }
 
-    //fill the stack
-    while (l2 != null){
+    // fill the stack
+    while (l2 != null) {
       tempStack2.push(l2.val);
       l2 = l2.next;
     }
 
     int val = 0;
-    while(!tempStack1.empty() && !tempStack2.empty()){
+    while (!tempStack1.empty() && !tempStack2.empty()) {
       int sum = tempStack1.pop() + tempStack2.pop();
       sum = sum + val;
-      if(sum % 10 == 0) {
-        val = sum / 10;//1
-        sum = 0;//0
+      if (sum % 10 == 0) {
+        val = sum / 10; // 1
+        sum = 0; // 0
       }
-      if(result == null){
+      if (result == null) {
         result = new ListNode(sum);
-      }
-      else {
+      } else {
         result = new ListNode(sum, result);
       }
     }
 
     System.out.println(result);
 
-    while (!tempStack1.empty()){
-      
-    }
+    while (!tempStack1.empty()) {}
 
-    while (!tempStack2.empty()){
-
-    }
-
-
-
+    while (!tempStack2.empty()) {}
   }
-
 }

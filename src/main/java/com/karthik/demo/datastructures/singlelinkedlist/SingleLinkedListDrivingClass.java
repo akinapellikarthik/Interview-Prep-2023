@@ -11,9 +11,9 @@ public class SingleLinkedListDrivingClass {
 
     sl.displayList();
 
-    sl.update(3,80);
+    sl.update(3, 80);
 
-    sl.update(5,80);//index out of bound will happen
+    sl.update(5, 80); // index out of bound will happen
 
     sl.displayList();
 
@@ -24,5 +24,4 @@ public class SingleLinkedListDrivingClass {
 
     sl.displayList();
   }
-
 }
