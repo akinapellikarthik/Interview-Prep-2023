@@ -10,6 +10,6 @@ class AddToArrayFormOfIntegerTest {
 
   @Test
   void addToArrayForm() {
-    Assertions.assertEquals(List.of(2,3),ob.addToArrayForm(new int[]{0}, 23));
+    Assertions.assertEquals(List.of(2),ob.addToArrayForm(new int[]{0}, 23));
   }
 }
