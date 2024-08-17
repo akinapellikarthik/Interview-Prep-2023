@@ -31,5 +31,8 @@ public class Main {
     dll.printList();
     System.out.println(dll.get(0).value);
     System.out.println(dll.get(4).value);
+
+    dll.set(0,400);
+    dll.printList();
   }
 }
