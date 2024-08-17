@@ -103,6 +103,7 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<mainClass>com.karthik.demo.dsa2k24.datastructures.linkedlist.dll.Main</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
