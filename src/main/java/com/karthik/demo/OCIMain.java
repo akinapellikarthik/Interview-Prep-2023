@@ -1,6 +1,5 @@
 package com.karthik.demo;
 
-
 public class OCIMain {
 
   public static void main(String[] args) {}
