@@ -22,5 +22,25 @@ public class Main {
     System.out.println(dll.removeFirst().value);
     System.out.println(dll.removeFirst().value);
     System.out.println(dll.removeFirst());
+
+    dll.prepend(200);
+    dll.append(201);
+    dll.append(202);
+    dll.append(203);
+    dll.append(204);
+    dll.printList();
+    System.out.println(dll.get(0).value);
+    System.out.println(dll.get(4).value);
+
+    dll.set(0, 400);
+    dll.insert(1, 402);
+    dll.printList();
+
+    dll.remove(1);
+    dll.printList();
+    dll.remove(1);
+    dll.printList();
+    dll.remove(2);
+    dll.printList();
   }
 }
