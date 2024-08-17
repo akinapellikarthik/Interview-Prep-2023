@@ -32,9 +32,10 @@ public class DoubleLinkedList {
     public void printList() {
         Node temp = head;
         while (temp != null) {
-            System.out.println(temp.value);
+            System.out.print(temp.value+"->");
             temp = temp.next;
         }
+        System.out.println("X");
     }
 
     public void getHead() {
@@ -43,6 +44,19 @@ public class DoubleLinkedList {
 
     public void getTail() {
         System.out.println("Head: "+tail.value);
+    }
+
+    public void append(int value) {
+        Node newNode = new Node(value);
+        if(length == 0){
+            head = newNode;
+            tail = newNode;
+        }else {
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+        }
+        length++;
     }
 
 
