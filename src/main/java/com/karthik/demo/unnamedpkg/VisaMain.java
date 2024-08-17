@@ -1,4 +1,4 @@
-package com.karthik.demo;
+package com.karthik.demo.unnamedpkg;
 
 /**
  * //Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i !=

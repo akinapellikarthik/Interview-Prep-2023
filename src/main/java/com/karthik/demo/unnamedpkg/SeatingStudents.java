@@ -1,4 +1,4 @@
-package com.karthik.demo;
+package com.karthik.demo.unnamedpkg;
 
 import java.util.HashSet;
 import java.util.Set;

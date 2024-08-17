@@ -1,4 +1,4 @@
-package com.karthik.demo;
+package com.karthik.demo.unnamedpkg;
 
 /**
  * Have the function SeatingStudents(arr) read the array of integers stored in arr which will be in
