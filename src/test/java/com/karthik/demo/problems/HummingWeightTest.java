@@ -10,9 +10,9 @@ class HummingWeightTest {
   @Test
   void hammingWeight() {
 
-    Assertions.assertEquals(31,hummingWeight.hammingWeightNewImpl(-3));
-    Assertions.assertEquals(32,hummingWeight.hammingWeightNewImpl(-1));
-    Assertions.assertEquals(2,hummingWeight.hammingWeightNewImpl(3));
-    Assertions.assertEquals(1,hummingWeight.hammingWeightNewImpl(-2147483648));
+    Assertions.assertEquals(31, hummingWeight.hammingWeightNewImpl(-3));
+    Assertions.assertEquals(32, hummingWeight.hammingWeightNewImpl(-1));
+    Assertions.assertEquals(2, hummingWeight.hammingWeightNewImpl(3));
+    Assertions.assertEquals(1, hummingWeight.hammingWeightNewImpl(-2147483648));
   }
 }

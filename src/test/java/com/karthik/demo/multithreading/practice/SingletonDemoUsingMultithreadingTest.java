@@ -5,13 +5,10 @@ import org.junit.jupiter.api.Test;
 
 class SingletonDemoUsingMultithreadingTest {
 
-
   @Test
   void verifyGetInstanceCalledOnceOnly() {
     SingletonDemoUsingMultithreading.getInstance();
     SingletonDemoUsingMultithreading.getInstance();
-    Assertions.assertEquals(1,SingletonDemoUsingMultithreading.getInstance().getCounter());
-
-
+    Assertions.assertEquals(1, SingletonDemoUsingMultithreading.getInstance().getCounter());
   }
 }

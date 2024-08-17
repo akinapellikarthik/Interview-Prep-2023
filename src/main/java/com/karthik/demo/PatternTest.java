@@ -11,9 +11,6 @@ public class PatternTest {
     if (matcher.matches()) {
       System.out.println("matching ");
 
-    }else
-      System.out.println("Not Matching");
-
+    } else System.out.println("Not Matching");
   }
-
 }

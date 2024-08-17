@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class Item {
-        private Integer productId;
-        private String category;
+  private Integer productId;
+  private String category;
 
-        private Integer quantity;
+  private Integer quantity;
 }

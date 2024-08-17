@@ -16,9 +16,8 @@ public class ProducerConsumerProblem {
   public boolean add(int item) {
 
     synchronized (queue) {
-
       while (queue.size() == capacity) {
-        //queue full, so wait
+        // queue full, so wait
         System.out.println("I will be waiting....");
         try {
           queue.wait();
@@ -30,13 +29,12 @@ public class ProducerConsumerProblem {
       boolean operationState = queue.add(item);
       queue.notifyAll();
       return operationState;
-
     }
   }
 
-  public int remove(){
+  public int remove() {
     synchronized (queue) {
-      while(queue.size() == 0){
+      while (queue.size() == 0) {
         try {
           System.out.println("I am waiting for consumption...");
           queue.wait();
@@ -46,30 +44,32 @@ public class ProducerConsumerProblem {
       }
       Integer itemPolled = queue.poll();
       try {
-        Thread.sleep(5 * 1000);// doing some operation
+        Thread.sleep(5 * 1000); // doing some operation
       } catch (InterruptedException e) {
         throw new RuntimeException(e);
       }
       queue.notifyAll();
       return itemPolled;
-
     }
   }
 
   public static void main(String[] args) {
     ProducerConsumerProblem producerConsumerProblem = new ProducerConsumerProblem(5);
-    Thread t1 = new Thread(() -> {
-      for (int i = 0; i < 10; i++) {
-        System.out.println("added ::"+producerConsumerProblem.add(i));
-      }
-    });
+    Thread t1 =
+        new Thread(
+            () -> {
+              for (int i = 0; i < 10; i++) {
+                System.out.println("added ::" + producerConsumerProblem.add(i));
+              }
+            });
 
-
-    Thread t2 = new Thread(() -> {
-      for (int i = 0; i < 100; i++) {
-        System.out.println("Polled Item::"+producerConsumerProblem.remove());
-      }
-    });
+    Thread t2 =
+        new Thread(
+            () -> {
+              for (int i = 0; i < 100; i++) {
+                System.out.println("Polled Item::" + producerConsumerProblem.remove());
+              }
+            });
 
     t1.start();
     t2.start();
@@ -81,5 +81,4 @@ public class ProducerConsumerProblem {
       throw new RuntimeException(e);
     }
   }
-
 }

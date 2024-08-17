@@ -8,8 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class Rule {
-    private String ruleName;
-    private String category;
-    private Integer categoryQty;
-
+  private String ruleName;
+  private String category;
+  private Integer categoryQty;
 }

@@ -12,7 +12,7 @@ public class MultiThreadedStackOpUsingObjectLocking {
     lock = new Object();
   }
 
-  public boolean isFull(){
+  public boolean isFull() {
     return stackTop >= stackArray.length - 1;
   }
 
@@ -20,12 +20,10 @@ public class MultiThreadedStackOpUsingObjectLocking {
     return stackTop < 0;
   }
 
-  public boolean push(int element){
+  public boolean push(int element) {
 
     synchronized (lock) {
-
-      if(isFull())
-        return false;
+      if (isFull()) return false;
       stackTop++;
       try {
         Thread.sleep(1000);
@@ -37,12 +35,10 @@ public class MultiThreadedStackOpUsingObjectLocking {
     }
   }
 
-  public int pop(){
+  public int pop() {
 
     synchronized (lock) {
-
-      if(isEmpty())
-        return Integer.MIN_VALUE;
+      if (isEmpty()) return Integer.MIN_VALUE;
 
       int obj = stackArray[stackTop];
       stackArray[stackTop] = Integer.MIN_VALUE;
@@ -56,5 +52,4 @@ public class MultiThreadedStackOpUsingObjectLocking {
       return obj;
     }
   }
-
 }

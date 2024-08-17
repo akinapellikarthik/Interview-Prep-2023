@@ -26,11 +26,7 @@ public class SingleLinkedListMain {
     singleLinkedList.insertAfterANode(102, 100);
     singleLinkedList.printList();
 
-
     singleLinkedList.insertBeforeANode(101, 102);
     singleLinkedList.printList();
-
-
   }
-
 }

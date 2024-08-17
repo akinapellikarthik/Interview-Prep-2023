@@ -5,8 +5,8 @@ public class ValidPalindrome {
   public boolean isValidPalindrome(String s) {
     StringBuffer sb = new StringBuffer();
     StringBuffer sb1 = new StringBuffer();
-    for(Character ch: s.toCharArray()){
-      if(Character.isAlphabetic(ch) || Character.isDigit(ch)){
+    for (Character ch : s.toCharArray()) {
+      if (Character.isAlphabetic(ch) || Character.isDigit(ch)) {
         sb.append(ch);
         sb1.append(ch);
       }
@@ -15,5 +15,4 @@ public class ValidPalindrome {
     System.out.println(sb1);
     return sb1.toString().equalsIgnoreCase(sb.reverse().toString());
   }
-
 }
