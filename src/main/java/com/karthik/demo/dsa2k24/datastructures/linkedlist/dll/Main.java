@@ -33,6 +33,7 @@ public class Main {
     System.out.println(dll.get(4).value);
 
     dll.set(0,400);
+    dll.insert(1,402);
     dll.printList();
   }
 }
