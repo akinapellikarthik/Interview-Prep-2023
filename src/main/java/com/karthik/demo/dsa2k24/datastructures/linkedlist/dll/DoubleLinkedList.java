@@ -59,5 +59,23 @@ public class DoubleLinkedList {
         length++;
     }
 
+    public Node removeLast() {
+        if(length == 0){
+            return null;
+        } else if (length == 1) {
+            length = 0;
+            Node temp = head;
+            head = tail = null;
+            return temp;
+        } else {
+            Node temp = tail;
+            tail = tail.prev;
+            tail.next = null;
+            temp.prev = null;
+            length--;
+            return temp;
+        }
+    }
+
 
 }

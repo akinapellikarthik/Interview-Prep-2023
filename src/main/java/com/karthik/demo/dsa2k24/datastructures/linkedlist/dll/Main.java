@@ -10,6 +10,14 @@ public class Main {
         dll.getLength();
         dll.append(11);
         dll.printList();
+        System.out.println("Remove method execution");
+        dll.removeLast();
+        dll.printList();
+        dll.removeLast();
+        dll.printList();
+
+        dll.removeLast();
+        dll.printList();
 
     }
 }
