@@ -11,5 +11,15 @@ public class Main {
         queue.enqueue(15);
 
         queue.printQueue();
+        System.out.println("Dequeueing.....");
+        System.out.println(queue.dequeue().value);
+        System.out.println(queue.dequeue().value);
+        System.out.println(queue.dequeue().value);
+        System.out.println(queue.dequeue().value);
+        System.out.println(queue.dequeue().value);
+        System.out.println(queue.dequeue().value);
+        System.out.println(queue.dequeue());
+
+        queue.printQueue();
     }
 }
