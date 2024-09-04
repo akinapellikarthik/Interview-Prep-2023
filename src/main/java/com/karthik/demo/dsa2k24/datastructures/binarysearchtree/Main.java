@@ -10,6 +10,7 @@ public class Main {
     bst.insert(21);
     bst.insert(31);
     System.out.println(bst.root.right.right.right.value);
+    System.out.println(bst.contains(10));
     System.out.println(bst.contains(-100));
   }
 }
