@@ -52,7 +52,7 @@ public class BinarySearchTree {
     while (temp != null) {
       if (temp.value == value) {
         return true;
-      } else if (temp.value < value) {
+      } else if (value < temp.value) {
         // left traversal
         temp = temp.left;
       } else {

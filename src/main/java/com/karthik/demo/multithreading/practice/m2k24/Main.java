@@ -23,7 +23,9 @@ public class Main {
       threads[i].setName("My Thread " + i);
     }
 
-    try (FileWriter fw = new FileWriter("src/main/java/com/karthik/demo/multithreading/practice/m2k24/data/MyThreads.txt");
+    try (FileWriter fw =
+            new FileWriter(
+                "src/main/java/com/karthik/demo/multithreading/practice/m2k24/data/MyThreads.txt");
         PrintWriter pw = new PrintWriter(fw)) {
       for (int i = 0; i < threads.length; i++) {
         pw.println("Main: Status of Thread " + i + ":" + threads[i].getState());
