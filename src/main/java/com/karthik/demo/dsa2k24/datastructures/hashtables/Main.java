@@ -16,5 +16,6 @@ public class Main {
     System.out.println(hashTable.get("one"));
     System.out.println(hashTable.get("two"));
     System.out.println(hashTable.get("four"));
+    System.out.println(hashTable.getAllKeys());
   }
 }

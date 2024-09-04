@@ -1,11 +1,13 @@
 package com.karthik.demo.dsa2k24.datastructures.hashtables;
 
+import java.util.ArrayList;
+
 public class HashTable {
-  private int size;
+  private int size = 7;
   private Node[] dataMap;
 
   public HashTable() {
-    this.dataMap = new Node[7];
+    this.dataMap = new Node[size];
   }
 
   class Node {
@@ -65,5 +67,17 @@ public class HashTable {
     }
 
     return -1;
+  }
+
+  public ArrayList getAllKeys() {
+    ArrayList<String> allKeys = new ArrayList<>();
+    for (Node node : dataMap) {
+      Node temp = node;
+      while (temp != null) {
+        allKeys.add(temp.key);
+        temp = temp.next;
+      }
+    }
+    return allKeys;
   }
 }
