@@ -56,17 +56,14 @@ public class HashTable {
   public int get(String key) {
     int index = hash(key);
 
-    if (dataMap[index] == null) {
-      return -1;
-    } else {
-      Node temp = dataMap[index];
-      while (temp != null) {
-        if (temp.key.equalsIgnoreCase(key)) {
-          return temp.value;
-        }
-        temp = temp.next;
+    Node temp = dataMap[index];
+    while (temp != null) {
+      if (temp.key.equalsIgnoreCase(key)) {
+        return temp.value;
       }
+      temp = temp.next;
     }
+
     return -1;
   }
 }
