@@ -15,5 +15,10 @@ public class Main {
         System.out.println(rBST.root.value);
         System.out.println(rBST.root.left.value);
         System.out.println(rBST.root.right.value);
+
+        System.out.println(rBST.rContains(1));
+        System.out.println(rBST.rContains(2));
+        System.out.println(rBST.rContains(3));
+        System.out.println(rBST.rContains(4));
     }
 }
