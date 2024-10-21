@@ -8,6 +8,8 @@ public class Main {
         rBST.rInsert(2);
         rBST.rInsert(1);
         rBST.rInsert(3);
+        rBST.rInsert(4);
+        rBST.rInsert(5);
 
         //  2
         // 1 3
@@ -20,5 +22,10 @@ public class Main {
         System.out.println(rBST.rContains(2));
         System.out.println(rBST.rContains(3));
         System.out.println(rBST.rContains(4));
+        System.out.println(rBST.rContains(5));
+
+        rBST.inOrderTraversal(rBST.root);
+
+        System.out.println(rBST.minValue(rBST.root.right.left));
     }
 }
