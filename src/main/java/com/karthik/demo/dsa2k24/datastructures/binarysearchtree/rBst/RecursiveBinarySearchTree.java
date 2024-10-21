@@ -21,6 +21,15 @@ public class RecursiveBinarySearchTree {
 
     }
 
+    //recursive call
+    public void inOrderTraversal(Node root){
+        if(root == null)
+            return;
+        inOrderTraversal(root.left);
+        System.out.println(root.value);
+        inOrderTraversal(root.right);
+    }
+
     public void rInsert(int value) {
         if (root == null) {
             root = new Node(value);
@@ -43,6 +52,13 @@ public class RecursiveBinarySearchTree {
         } else {
             return rContains(currentNode.right, value);
         }
+    }
+
+    public int minValue(Node currentNode){
+        while(currentNode != null){
+            currentNode = currentNode.left;
+        }
+        return currentNode.value;
     }
 
     class Node {
