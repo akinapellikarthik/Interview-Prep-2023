@@ -55,7 +55,7 @@ public class RecursiveBinarySearchTree {
     }
 
     public int minValue(Node currentNode){
-        while(currentNode != null){
+        while(currentNode.left != null){
             currentNode = currentNode.left;
         }
         return currentNode.value;
