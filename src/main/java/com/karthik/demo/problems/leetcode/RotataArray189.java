@@ -10,6 +10,7 @@ public class RotataArray189 {
     }
 
     public void rotate(int[] nums, int k) {
+
         int n = nums.length;
         k %= n;
         if (nums == null || n == 0) return;
