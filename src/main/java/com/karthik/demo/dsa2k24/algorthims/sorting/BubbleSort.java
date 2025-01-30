@@ -1,7 +1,7 @@
 package com.karthik.demo.dsa2k24.algorthims.sorting;
 
 /**
- * Bubble Sort implementation12
+ * Bubble Sort implementation
  */
 public class BubbleSort {
 
