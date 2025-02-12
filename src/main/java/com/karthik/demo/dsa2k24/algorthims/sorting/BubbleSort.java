@@ -1,8 +1,6 @@
 package com.karthik.demo.dsa2k24.algorthims.sorting;
 
-/**
- * Bubble Sort implementation in Java
- */
+/** Bubble Sort implementation in Java */
 public class BubbleSort {
 
   public static void bubbleSort(int[] input) {
