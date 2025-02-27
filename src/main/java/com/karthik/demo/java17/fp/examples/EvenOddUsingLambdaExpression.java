@@ -2,6 +2,7 @@ package com.karthik.demo.java17.fp.examples;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.*;
 
 @FunctionalInterface
@@ -82,20 +83,43 @@ public class EvenOddUsingLambdaExpression {
     return items.parallelStream().filter(predicate).toList();
   }
 
-  //Use Consumer<T> to print all elements of a list.
-  public void printAllElements(List<String> items){
-      Consumer<String> consolePrinter = System.out::println;
-      items.parallelStream().forEachOrdered(consolePrinter);
+  // Use Consumer<T> to print all elements of a list.
+  public void printAllElements(List<String> items) {
+    Consumer<String> consolePrinter = System.out::println;
+    items.parallelStream().forEachOrdered(consolePrinter);
   }
 
-  //Implement Supplier<T> to generate a random number.
-  public int randomNumberGenerator(){
-      Supplier<Integer> randomNumberSupplier = () -> (int) (Math.random() * 100);
-      return  randomNumberSupplier.get();
+  // Implement Supplier<T> to generate a random number.
+  public int randomNumberGenerator() {
+    Supplier<Integer> randomNumberSupplier = () -> (int) (Math.random() * 100);
+    return randomNumberSupplier.get();
   }
-  //Convert a list of strings to uppercase using method references.
-  public static List<String> upperCaseConv(List<String> items)  {
-      return items.parallelStream().map(String::toUpperCase).toList();
+
+  // Convert a list of strings to uppercase using method references.
+  public static List<String> upperCaseConv(List<String> items) {
+    return items.parallelStream().map(String::toUpperCase).toList();
+  }
+
+  // Create a method that returns the cubeFn of a number and call it using a method reference.
+  public static int cubeFn(int i) {
+    return (int) Math.pow(i, 3);
+  }
+
+  // Use Optional to handle a null value when retrieving an element from a list.
+  public String handleListItem(List<String> items) {
+    return Optional.ofNullable(items)
+        .flatMap(item -> item.stream().findAny())
+        .orElse("No Value Found");
+  }
+
+  // Given an Optional<String>, return its length if present, otherwise return 0.
+  public int strLen(Optional<String> str) {
+    return str.map(String::length).orElse(0);
+  }
+
+  // Use Optional to provide a default value when retrieving data.
+  public Optional<String> optionalHandleStr(String s) {
+    return Optional.ofNullable(s);
   }
 
   public static void main(String[] args) {
@@ -110,9 +134,8 @@ public class EvenOddUsingLambdaExpression {
     System.out.println(o.sumEvenNumbersNewImpl(List.of(1, 2, 3, 4, 5, 6, 7, 8)));
     System.out.println(o.findFirstElement(List.of(1, 2, 3, 4, 5, 6, 7, 8)));
     System.out.println(o.findFirstElement(List.of(19, 20)));
-      List<String> fruits = List.of("banana", "apple", "cherry", "date");
-      System.out.println(
-        o.sortStringsInDescendingOrder(fruits));
+    List<String> fruits = List.of("banana", "apple", "cherry", "date");
+    System.out.println(o.sortStringsInDescendingOrder(fruits));
     System.out.println(
         o.countWordsWithStartingChar(List.of("banana", "apple", "archery", "date"), "A"));
     System.out.println(o.duplicateRemover(List.of(1, 2, 3, 1, 2, 3)));
@@ -121,8 +144,17 @@ public class EvenOddUsingLambdaExpression {
     System.out.println(o.square(List.of(1, 2, 3, 1, 2, 3)));
     System.out.println(o.filterString(fruits, 7));
     o.printAllElements(fruits);
-    //Convert a list of strings to uppercase using method references.
-    Function<List<String>, List<String>> upperCaseConv = EvenOddUsingLambdaExpression::upperCaseConv;
-      System.out.println(upperCaseConv.apply(fruits));
+    // Convert a list of strings to uppercase using method references.
+    Function<List<String>, List<String>> upperCaseConv =
+        EvenOddUsingLambdaExpression::upperCaseConv;
+    System.out.println(upperCaseConv.apply(fruits));
+    Function<Integer, Integer> cubeFunction = EvenOddUsingLambdaExpression::cubeFn;
+    System.out.println(cubeFunction.apply(3));
+    System.out.println(o.handleListItem(null));
+    System.out.println(o.handleListItem(List.of("alp")));
+    System.out.println(o.strLen(Optional.empty()));
+    System.out.println(o.strLen(Optional.of("hello")));
+    System.out.println(o.optionalHandleStr(null));
+    System.out.println(o.optionalHandleStr("Karthik"));
   }
 }
